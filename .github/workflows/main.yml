@@ -20,4 +20,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: 2dot0/android-rust:latest
+          tags: |
+            2dot0/android-rust-31:latest
+            2dot0/android-rust-31:1
+            2dot0/android-rust-31:1.60
+            2dot0/android-rust-31:1.60.0
