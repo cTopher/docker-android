@@ -24,6 +24,9 @@ RUN set -eux; \
     rustup --version; \
     cargo --version; \
     rustc --version; \
+    \
+    rustup component add clippy; \
+    rustup component add rustfmt; \
     rustup target add aarch64-linux-android; \
     \
     sdkmanager --install "ndk;23.1.7779620"; # https://developer.android.com/ndk/downloads
