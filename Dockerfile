@@ -6,7 +6,13 @@ ENV RUSTUP_HOME=/usr/local/rustup \
     RUST_VERSION=1.60.0
 
 
-RUN \
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        gcc \
+    ; \
+    rm -rf /var/lib/apt/lists/*; \
+    \
     rustArch='x86_64-unknown-linux-gnu'; \
     url="https://static.rust-lang.org/rustup/archive/1.24.3/${rustArch}/rustup-init"; \
     wget --progress=dot:giga "$url"; \
@@ -18,5 +24,6 @@ RUN \
     cargo --version; \
     rustc --version; \
     rustup target add aarch64-linux-android; \
+    \
     sdkmanager --install "ndk;23.1.7779620"; # https://developer.android.com/ndk/downloads
 
