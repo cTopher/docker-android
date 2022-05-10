@@ -16,6 +16,7 @@ RUN \
     chmod -R a+w $RUSTUP_HOME $CARGO_HOME; \
     rustup --version; \
     cargo --version; \
-    rustc --version;\
+    rustc --version; \
+    rustup target add aarch64-linux-android; \
     sdkmanager --install "ndk;23.1.7779620"; # https://developer.android.com/ndk/downloads
 
