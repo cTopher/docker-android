@@ -8,7 +8,10 @@ ENV RUSTUP_HOME=/usr/local/rustup \
 
 RUN set -eux; \
     apt-get update; \
-    apt-get install -y --no-install-recommends build-essential; \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        python \
+    ; \
     rm -rf /var/lib/apt/lists/*; \
     \
     rustArch='x86_64-unknown-linux-gnu'; \
